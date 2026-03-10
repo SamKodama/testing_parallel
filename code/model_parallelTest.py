@@ -15,10 +15,14 @@
 
 # %%
 import numpy as np
-import os
+import os, sys
 os.chdir('..')
+from paths import INPUTS, OUTPUTS, SRC
+sys.path.append(SRC)
 import src.util as util
 import joblib
+
+# %%
 
 # %%
 fnames = np.loadtxt('inputs/readMe.txt')
