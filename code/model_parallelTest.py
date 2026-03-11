@@ -16,16 +16,15 @@
 # %%
 import numpy as np
 import os, sys
-os.chdir('..')
-from paths import INPUTS, OUTPUTS, SRC
-sys.path.append(SRC)
-import src.util as util
+# os.chdir('..')
+from pathlib import Path
+root = Path.cwd().parent
+sys.path.append(str(root / 'src'))
+import util
 import joblib
 
 # %%
-
-# %%
-fnames = np.loadtxt('inputs/readMe.txt')
+fnames = np.loadtxt(f'{root}/inputs/readMe.txt')
 
 # %%
 # joblib.Parallel(n_jobs=4)(joblib.delayed(image_flipper)(f) for f in file_list)
